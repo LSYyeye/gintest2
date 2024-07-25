@@ -1,0 +1,35 @@
+{{define "admin/useradd.html"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>演示文件上传</h1>
+
+    <!-- 上传文件一定要加这个：enctype="multipart/form-data" -->
+
+<!-- 单个文件上传 -->
+    <form action="/aadmin/user/doUpload" method="post" enctype="multipart/form-data">
+        用户名：<input type="text" name="username" placeholder="用户名">
+        <br><br>
+        <!-- 多文件相同名字上传演示 -->
+        头像1:<input type="file" name="face" >
+        <br><br>
+        <input type="submit" value="提交">
+    </form>
+<!-- 同名字的多个文件上传 -->
+    <!-- <form action="/aadmin/user/doUpload" method="post" enctype="multipart/form-data">
+        用户名：<input type="text" name="username" placeholder="用户名">
+        <br><br>
+        头像1:<input type="file" name="face[]" >
+        <br><br>
+        头像2:<input type="file" name="face[]" >
+        <br><br>
+        <input type="submit" value="提交">
+    </form> -->
+</body>
+</html>
+{{end}}
